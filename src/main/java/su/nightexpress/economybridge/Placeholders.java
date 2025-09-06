@@ -13,8 +13,7 @@ public class Placeholders extends su.nightexpress.nightcore.util.Placeholders {
 
     public static final PlaceholderList<Currency> CURRENCY = new PlaceholderList<Currency>()
         .add(CURRENCY_ID, Currency::getInternalId)
-        .add(CURRENCY_NAME, Currency::getName)
-        ;
+        .add(CURRENCY_NAME, Currency::getName);
 
     @NotNull
     public static UnaryOperator<String> forCurrency(@NotNull Currency currency) {

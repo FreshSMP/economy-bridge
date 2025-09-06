@@ -68,7 +68,7 @@ public class CurrencyManager extends AbstractManager<BridgePlugin> {
         this.addListener(new CurrencyListener(this.plugin, this));
 
         // Clean up when all plugins are loaded.
-        this.plugin.runTask(task -> {
+        this.plugin.runTask(() -> {
             this.pluginProviders.clear();
             this.currencyConfig.saveChanges();
             this.itemsConfig.saveChanges();
@@ -111,13 +111,9 @@ public class CurrencyManager extends AbstractManager<BridgePlugin> {
             }
         });
 
-        this.pluginProviders.put(CurrencyPlugins.COINS_ENGINE, () -> {
-            CoinsEngineCurrency.getCurrencies().forEach(this::registerCurrency);
-        });
+        this.pluginProviders.put(CurrencyPlugins.COINS_ENGINE, () -> CoinsEngineCurrency.getCurrencies().forEach(this::registerCurrency));
 
-        this.pluginProviders.put(CurrencyPlugins.ULTRA_ECONOMY, () -> {
-            UltraEconomyCurrency.getCurrencies().forEach(this::registerCurrency);
-        });
+        this.pluginProviders.put(CurrencyPlugins.ULTRA_ECONOMY, () -> UltraEconomyCurrency.getCurrencies().forEach(this::registerCurrency));
 
         // Try load any provider(s) of the plugins that are already enabled aka loaded.
         this.pluginProviders.keySet().forEach(pluginName -> {

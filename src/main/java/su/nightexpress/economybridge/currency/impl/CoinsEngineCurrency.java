@@ -108,8 +108,6 @@ public class CoinsEngineCurrency implements Currency {
         return this.currency.getIcon();
     }
 
-
-
     @Override
     public double getBalance(@NotNull Player player) {
         return CoinsEngineAPI.getBalance(player, this.currency);

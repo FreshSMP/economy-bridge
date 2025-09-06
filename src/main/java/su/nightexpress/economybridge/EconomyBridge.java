@@ -104,8 +104,6 @@ public class EconomyBridge {
         return withdraw(playerId, CurrencyId.VAULT, amount);
     }
 
-
-
     public static boolean isDisabled(@NotNull String id) {
         return Config.isDisabledCurrency(id);
     }

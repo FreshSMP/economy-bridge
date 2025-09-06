@@ -93,8 +93,6 @@ public class UltraEconomyCurrency implements Currency {
         return this.currency.getIcon().getAsItemStack().orElse(new ItemStack(Material.GOLD_INGOT));
     }
 
-
-
     @Override
     public double getBalance(@NotNull Player player) {
         return this.getAccount(player).map(account -> account.getBalance(currency).getOnHand()).orElse(0D);
@@ -124,8 +122,6 @@ public class UltraEconomyCurrency implements Currency {
     public void take(@NotNull UUID playerId, double amount) {
         this.getAccount(playerId).ifPresent(account -> account.getBalance(currency).removeHand(amount));
     }
-
-
 
     private Optional<Account> getAccount(@NotNull Player player) {
         return UltraEconomy.getAPI().getAccounts().name(player.getName());

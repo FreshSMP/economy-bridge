@@ -32,11 +32,7 @@ public class ItemManager extends AbstractManager<BridgePlugin> {
         this.register(DUMMY_HANDLER);
 
         this.register(ItemPlugins.EXCELLENT_CRATES, ExcellentCratesHandler::new);
-        this.register(ItemPlugins.EXECUTABLE_ITEMS, ExecutableItemsHandler::new);
         this.register(ItemPlugins.ITEMS_ADDER, ItemsAdderHandler::new);
-        this.register(ItemPlugins.MMOITEMS, MMOItemsHandler::new);
-        this.register(ItemPlugins.NEXO, NexoHandler::new);
-        this.register(ItemPlugins.ORAXEN, OraxenHandler::new);
     }
 
     @Override
